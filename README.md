@@ -1,12 +1,12 @@
-# GRAY BIT.. — Trading Analysis Website
+# GRAY BIT.. — Live MT5 next-candle analysis
 
-A black-and-green starter dashboard for CRT, POI, and PO3 trading analysis.
+## Website workflow
+Type a pair (e.g. EURUSD), choose timeframe (M15/H1/etc.), and tap LOAD ANALYSIS. The server analyzes the latest candles pushed from MT5 and returns a probabilistic next-candle bias.
 
-## Publish with GitHub Pages
-Upload `index.html`, `README.md`, and `.nojekyll` to the root of a GitHub repository. In repository Settings → Pages, select deploy from branch `main` and folder `/ (root)`.
+## MT5 bridge
+Render cannot directly open an MT5 desktop terminal. Install the included `GRAY_BIT_MT5_Bridge.mq5` Expert Advisor on an MT5 terminal that stays online. Set `BridgeURL` to `https://YOUR-RENDER-SERVICE.onrender.com/api/mt5/candles`. The EA sends recent OHLC candles to the server.
 
-## Use
-Upload OHLC CSV data with columns `time,open,high,low,close` (time optional), choose M15 or H1, and click Analyze loaded data.
+Never put MT5 account passwords, API secrets, or investor credentials in the website code.
 
-## Limitations
-This is a prototype with simplified sweep/shift checks. Full HTF CRT closure, first qualifying OB sequencing, PO3 classification, SBR/SLP, multi-candle 50% confirmation, live MT5 connection, and backend Telegram alerts are not implemented yet. It does not place trades.
+## Important
+The next-candle result is probabilistic, not guaranteed. The included analysis is a starting CRT/POI/PO3-style rule engine, not a claim of predictive certainty.
