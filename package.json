@@ -1,0 +1,12 @@
+{
+  "name": "gray-bit-trading-analysis",
+  "version": "1.0.0",
+  "description": "GRAY-BIT Trading Analysis Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
